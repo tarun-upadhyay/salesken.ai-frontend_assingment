@@ -14,6 +14,8 @@ function handleSubmit() {
   
   if(auth[1]){
     localStorage.setItem("loggedUser", JSON.stringify(auth[0]))
+    localStorage.setItem("isAuth", true)
+    window.location.href = "/userpanel.html";
   }else{
     return alert("Wrong Credential or You can resigter")
   }

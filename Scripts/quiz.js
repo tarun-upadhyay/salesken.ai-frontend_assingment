@@ -1,7 +1,12 @@
+import nav from "./navbar.js";
+document.getElementById("navbar").innerHTML = nav();
 let loggedUserData = JSON.parse(localStorage.getItem("loggedUser")) || [];
-
 let questNo = 0;
 function Display(data) {
+    console.log(data)
+    const titlquiz = document.getElementById("titlequiz")
+   titlquiz.innerText = data[0].mocks[0].title
+   
   const question = document.getElementById("question");
   question.innerText = data[0].mocks[0].ssc[0].questions[questNo].Question;
 
@@ -38,6 +43,7 @@ function nextQuestion() {
     loggedUserData[0].mocks[0].ssc[0].finalScore = finalScore
   } 
   questNo++;
+  localStorage.setItem("loggedUser", JSON.stringify(loggedUserData))
   console.log(curransers, loggedUserData[0]);
   return Display(loggedUserData);
 }

@@ -1,4 +1,7 @@
+
+
 let nav = () => {
+  
   return `<div id="left">
   
       <div id="logo_nav">
@@ -9,11 +12,11 @@ let nav = () => {
       </div>
     </div>
       <div id="right">
-          <div id="login">
-          <a  href="/login.html" style="text-decoration: none";>
-          <button id="login_nav">Login</button>
-          </a>
-          </div>
+      <div id="login">
+      <a  href="/login.html" style="text-decoration: none";>
+      <button id="login_nav">Login</button>
+      </a>
+      </div>
           <div id="signup">
           <a href="/signup.html" style="text-decoration: none";>
           <button id="singup_nav">Sign Up</button>

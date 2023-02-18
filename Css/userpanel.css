@@ -1,0 +1,18 @@
+#userpanel_all{
+    margin: auto;
+    width: 70%;
+}
+.child_allquizes{
+  border-radius: 8px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#allquizes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+
+}

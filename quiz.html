@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./Css/quiz.css">
+    <link rel="stylesheet" href="./Css/navbar.css" />
+    <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="navbar"></div>
     <div class="main">
+      <h1 id="titlequiz"></h1>
       <div class="child">
-        <h3 id="question">Question is Play</h3>
+        <h3 id="question">Questions</h3>
         <ul>
           <li>
             <input type="radio" class="options" name="options" id="option_1" />
@@ -29,9 +43,10 @@
             <label id="option_lable_4"  for="option_4">Answer 1</label>
           </li>
         </ul>
-        <button id="submit" >Submit and Next</button>
+        <button class="submit"  style="background-color: yellow; color:  black;">Clear</button>
+        <button id="submit" class="submit" >Submit and Next</button>
       </div>
     </div>
   </body>
-  <script src="./Scripts/quiz.js"></script>
+  <script src="./Scripts/quiz.js" type="module"></script>
 </html>

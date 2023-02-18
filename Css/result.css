@@ -1,0 +1,27 @@
+#scores {
+    display: flex;
+    justify-content: space-between;
+}
+#result,#result_questions{
+    width: 70%;
+    margin: auto;
+}
+#result_questions{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+.result_option{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+}
+.result_option h5{
+    padding: 5px;
+   
+}
+.result_child{
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}

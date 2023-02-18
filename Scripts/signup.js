@@ -45,7 +45,7 @@ class User {
     this.email = email;
     this.password = password;
     this.exam = exam;
-    this.mocks = [{mock:1, ssc}]
+    this.mocks = [{mock:1, ssc, title:"Basic Questions"}]
     
   }
 }
