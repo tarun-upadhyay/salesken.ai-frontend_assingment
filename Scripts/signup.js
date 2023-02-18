@@ -16,7 +16,8 @@ function handleSubmit() {
       "Please fill all the details and Password length minium 8 Charc"
     );
   }
-  let student = new User(name, email, password, exam, ssc);
+  const id = userData.length + 1;
+  let student = new User(name, email, password, exam, ssc, id);
 
   let finalSubmit = userData.filter((el) => el.email === student.email);
 
@@ -38,7 +39,8 @@ document.getElementById("form_data").addEventListener("submit", (e) => {
 });
 
 class User {
-  constructor(name, email, password, exam, ssc) {
+  constructor(name, email, password, exam, ssc, id) {
+    this.studen_Id = id;
     this.name = name;
     this.email = email;
     this.password = password;

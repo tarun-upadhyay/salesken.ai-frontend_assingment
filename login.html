@@ -26,17 +26,19 @@
             <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=360" alt="">
         </div>
         <div id="login-right">
-            <form action="">
+            <form action="" id="form_data">
                 <div>
                     <h4>Sign In</h4>
                     <p>New user?  <a href="/signup.html" style="text-decoration: none; font-weight: bolder; margin-left: 5px; color: #2d81f7;" >Create an account </a></p>
                 </div>
                 <input type="email" id="email" placeholder="Email Address" required>
                 <br>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" id="password"
+                minlength="8"
+                required>
                 <br>
                 
-                <button id="login_signin">Sign IN</button>
+                <input id="login_signin" value="Sign In" type="submit"></input>
             </form>
         </div>
     </div>
