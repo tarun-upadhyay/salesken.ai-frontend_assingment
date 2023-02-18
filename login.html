@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/navbar.css" />
+    <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="login-parent">
+        <div id="login-left">
+            <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=360" alt="">
+        </div>
+        <div id="login-right">
+            <form action="">
+                <div>
+                    <h4>Sign In</h4>
+                    <p>New user?  <a href="/signup.html" style="text-decoration: none; font-weight: bolder; margin-left: 5px; color: #2d81f7;" >Create an account </a></p>
+                </div>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <br>
+                <input type="password" placeholder="Password" required>
+                <br>
+                
+                <button id="login_signin">Sign IN</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./Scripts/login.js" type="module"></script>
+</html>

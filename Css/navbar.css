@@ -1,0 +1,53 @@
+#navbar {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  #nav_img {
+    height: 50px;
+  }
+  #logo_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #headingfirst {
+    color: #08bd80;
+  }
+  #nav_img + h3 {
+    color: #2d81f7;
+    
+    
+  }
+  
+  #right {
+    display: flex;
+    padding: 10px;
+  }
+  #right div {
+    padding: 5px;
+  }
+  #right > div button {
+    padding: 10px 3rem;
+    margin-right: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  
+    border: none;
+    font-weight: 500;
+  }
+  #singup_nav {
+    color: white;
+    background-color: #2d81f7;
+    letter-spacing: 2px;
+  }
+  #login_nav {
+    background-color: #ffed00;
+    color: black;
+    letter-spacing: 1px;
+  }
+  
