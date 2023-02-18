@@ -11,7 +11,12 @@ function handleSubmit() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   let auth = authentication(email, password);
-  console.log(auth);
+  
+  if(auth[1]){
+    localStorage.setItem("loggedUser", JSON.stringify(auth[0]))
+  }else{
+    return alert("Wrong Credential or You can resigter")
+  }
 }
 
 function authentication(email, password) {
@@ -19,6 +24,7 @@ function authentication(email, password) {
     return el.email === email && el.password === password;
   });
 
-  if (checked.length) return true;
+  if (checked.length){
+    return [checked, true]}
   return false;
 }

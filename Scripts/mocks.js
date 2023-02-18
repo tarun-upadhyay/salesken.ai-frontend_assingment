@@ -1,8 +1,7 @@
 export const ssc = [
   {
     isAttempted: false,
-    finalScore: null,
-    Mock: 1,
+    finalScore: 0,
     questions: [
       {
         ques: 1,
@@ -11,25 +10,28 @@ export const ssc = [
         b: 6,
         c: 2,
         d: 4,
-        ans: 6,
+        ans: "option_2",
+        curransers:"",
       },
       {
         ques: 2,
-        Question: "How many legs have in cockroach",
+        Question: "Full form of HTML",
         a: 5,
         b: 6,
         c: 2,
         d: 4,
-        ans: 6,
+        ans: "option_1",
+        curransers:"",
       },
       {
         ques: 3,
-        Question: "How many legs have in cockroach",
+        Question: "Full form of css",
         a: 5,
         b: 6,
         c: 2,
         d: 4,
-        ans: 6,
+        ans: "option_3",
+        curransers:"",
       },
       {
         ques: 4,
@@ -38,8 +40,10 @@ export const ssc = [
         b: 6,
         c: 2,
         d: 4,
-        ans: 6,
+        ans: "option_2",
+        curransers:"",
       },
     ],
+    
   },
 ];
