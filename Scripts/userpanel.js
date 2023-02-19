@@ -8,9 +8,24 @@ if (isAuth) {
   document.getElementById("username").innerText = name;
   document.getElementById("singup_nav").innerText = "Log out";
 }
-
+document.getElementById("username").addEventListener("click", ()=>{
+  return  window.location.href = "../userpanel.html"
+})
+document.getElementById("singup_nav").addEventListener("click", ()=>{
+    localStorage.removeItem("loggedUser")
+    localStorage.removeItem("isAuth")
+   return window.location.href = "../login.html"
+})
+document.getElementById("logo_nav").addEventListener("click",()=>{
+    if(isAuth){
+       return  window.location.href = "../userpanel.html"
+    }else{
+       return window.location.href = "../index.html"
+    }
+})
 function Display(data) {
   let allquizes = document.getElementById("allquizes");
+  
   allquizes.innerHTML = null;
   data.forEach((el, i) => {
     let div = document.createElement("div");
@@ -23,12 +38,13 @@ function Display(data) {
     let status = document.createElement("button");
     status.addEventListener("click", ()=>{
         if(el.ssc[0].isAttempted){
-            console.log(el.ssc)
+          
             localStorage.setItem("result", JSON.stringify(el.ssc))
             window.location.href = "/result.html"
         }else{
-            window.location.href = "/quiz.html"
+           window.location.href = "/quiz.html"
         }
+       
     })
 
     status.innerText = el.ssc[0].isAttempted ? "Result" : "Start";

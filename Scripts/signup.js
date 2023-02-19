@@ -1,8 +1,30 @@
 import nav from "./navbar.js";
 document.getElementById("navbar").innerHTML = nav();
-import { ssc } from "./mocks.js";
-let userData = JSON.parse(localStorage.getItem("userData")) || [];
+import { ssc ,prog} from "./mocks.js";
 
+const userData = JSON.parse(localStorage.getItem("loggedUser")) || [];
+const isAuth = localStorage.getItem("isAuth") || false;
+const { name } = userData[0];
+if (isAuth) {
+  document.getElementById("login").innerHTML = `<h3 id="username"></h3>`;
+  document.getElementById("username").innerText = name;
+  document.getElementById("singup_nav").innerText = "Log out";
+}
+document.getElementById("username").addEventListener("click", ()=>{
+    window.location.href = "/userpanel.html"
+})
+document.getElementById("singup_nav").addEventListener("click", ()=>{
+  localStorage.removeItem("loggedUser")
+  localStorage.removeItem("isAuth")
+ return   window.location.href = "../login.html"
+})
+document.getElementById("logo_nav").addEventListener("click",()=>{
+    if(isAuth){
+         window.location.href = "../userpanel.html"
+    }else{
+        window.location.href = "../index.html"
+    }
+})
 function handleSubmit() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -17,19 +39,19 @@ function handleSubmit() {
     );
   }
   const id = userData.length + 1;
-  let student = new User(name, email, password, exam, ssc, id);
+  let student = new User(name, email, password, exam, ssc,prog, id);
 
   let finalSubmit = userData.filter((el) => el.email === student.email);
 
   if (finalSubmit.length) {
     alert("You had already registred Plz login");
-    return (window.location.href = "/login.html");
+    return (window.location.href = "../login.html");
   } else {
     userData.push(student);
     alert("Signup Succeed");
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    return (window.location.href = "/login.html");
+    return (window.location.href = "../login.html");
   }
 }
 

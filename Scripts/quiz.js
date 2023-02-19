@@ -1,12 +1,38 @@
 import nav from "./navbar.js";
 document.getElementById("navbar").innerHTML = nav();
 let loggedUserData = JSON.parse(localStorage.getItem("loggedUser")) || [];
+const userData = JSON.parse(localStorage.getItem("loggedUser")) || [];
+const isAuth = localStorage.getItem("isAuth") || false;
+const { name } = userData[0];
+if (isAuth) {
+  document.getElementById("login").innerHTML = `<h3 id="username"></h3>`;
+  document.getElementById("username").innerText = name;
+  document.getElementById("singup_nav").innerText = "Log out";
+}
+document.getElementById("username").addEventListener("click", ()=>{
+    window.location.href = "/userpanel.html"
+})
+document.getElementById("singup_nav").addEventListener("click", ()=>{
+    localStorage.removeItem("loggedUser")
+    localStorage.removeItem("isAuth")
+  return  window.location.href = "../login.html"
+})
+document.getElementById("logo_nav").addEventListener("click",()=>{
+    if(isAuth){
+         window.location.href = "../userpanel.html"
+    }else{
+        window.location.href = "../index.html"
+    }
+})
 let questNo = 0;
 function Display(data) {
-    console.log(data)
-    const titlquiz = document.getElementById("titlequiz")
-   titlquiz.innerText = data[0].mocks[0].title
-   
+  console.log(data);
+  let checkd = document.querySelectorAll("input");
+  checkd.forEach((ele) => (ele.checked = false));
+
+  const titlquiz = document.getElementById("titlequiz");
+  titlquiz.innerText = data[0].mocks[0].title;
+
   const question = document.getElementById("question");
   question.innerText = data[0].mocks[0].ssc[0].questions[questNo].Question;
 
@@ -23,9 +49,18 @@ function Display(data) {
   option4.innerText = data[0].mocks[0].ssc[0].questions[questNo].d;
 }
 Display(loggedUserData);
-document.getElementById("submit").addEventListener("click", () => {
-  nextQuestion();
+document.getElementById("submitandnext").addEventListener("click", () => {
+  if (questNo < loggedUserData[0].mocks[0].ssc[0].questions.length - 1) {
+   
+    nextQuestion();
+  } else {
+    alert("Completed the test");
+    
+   nextQuestion()
+    window.location.href = "../userpanel.html";
+  }
 });
+
 const answers = document.querySelectorAll(".options");
 let finalScore = 0;
 function nextQuestion() {
@@ -35,15 +70,39 @@ function nextQuestion() {
       curransers = el.id;
     }
   });
+  if (!curransers) {
+    curransers = "option_0";
+  }
   loggedUserData[0].mocks[0].ssc[0].questions[questNo].curransers = curransers;
   loggedUserData[0].mocks[0].ssc[0].isAttempted = true;
-  console.log(loggedUserData[0].mocks[0].ssc[0].questions[questNo].ans)
-  if(loggedUserData[0].mocks[0].ssc[0].questions[questNo].ans === curransers){
-    finalScore++
-    loggedUserData[0].mocks[0].ssc[0].finalScore = finalScore
-  } 
+
+  if (loggedUserData[0].mocks[0].ssc[0].questions[questNo].ans === curransers) {
+    finalScore++;
+    loggedUserData[0].mocks[0].ssc[0].finalScore = finalScore;
+  }
   questNo++;
-  localStorage.setItem("loggedUser", JSON.stringify(loggedUserData))
-  console.log(curransers, loggedUserData[0]);
+
+  localStorage.setItem("loggedUser", JSON.stringify(loggedUserData));
+  if(questNo == loggedUserData[0].mocks[0].ssc[0].questions.length){
+    return
+  }
+  
   return Display(loggedUserData);
 }
+
+document.getElementById("clear_question").addEventListener("click", () => {
+  let checkd = document.querySelectorAll("input");
+  checkd.forEach((ele) => (ele.checked = false));
+});
+document.getElementById("skip_question").addEventListener("click", () => {
+  let checkd = document.querySelectorAll("input");
+  checkd.forEach((ele) => (ele.checked = false));
+  if (questNo < loggedUserData[0].mocks[0].ssc[0].questions.length - 1) {
+    console.log(loggedUserData[0].mocks[0].ssc[0].questions.length, questNo);
+    nextQuestion();
+  } else {
+    alert("Completed the test");
+    window.location.href = "../userpanel.html";
+  }
+  
+});

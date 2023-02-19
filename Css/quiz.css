@@ -31,3 +31,17 @@ input{
     border: none;
     font-weight: 500;
 }
+.options{
+    cursor: pointer;
+  border: 1px solid black;
+   
+}
+@media all and (min-width:320px) and (max-width:767px){
+    .child{
+        width: 90%;
+    }
+    .submit{
+        padding: 10px;
+        margin-right: 7px;
+    }
+}

@@ -16,3 +16,18 @@
     gap: 10px;
 
 }
+@media all and (min-width:320px) and (max-width:767px){
+    #userpanel_all{
+       
+        width: 90%;
+    }
+    .child_allquizes{
+       padding: 10px;
+      }
+      #allquizes{
+        
+        grid-template-columns: repeat(2,1fr);
+
+    
+    }
+}
