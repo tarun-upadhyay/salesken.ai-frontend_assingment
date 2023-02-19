@@ -44,4 +44,7 @@ This is a frontend-based web application, and as this was a codding assignment w
 
 ## Thankyou for your Patience
  ### Glimpes
+![Homepage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/Homepage.png)
+![loginpage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/Login%20Page.png)
+![signuppage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/signup.png)
 
