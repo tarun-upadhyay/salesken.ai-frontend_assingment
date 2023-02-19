@@ -4,15 +4,13 @@ import { ssc ,prog} from "./mocks.js";
 
 const userData = JSON.parse(localStorage.getItem("loggedUser")) || [];
 const isAuth = localStorage.getItem("isAuth") || false;
-const { name } = userData[0];
+let { name } = userData[0] || ""
 if (isAuth) {
   document.getElementById("login").innerHTML = `<h3 id="username"></h3>`;
   document.getElementById("username").innerText = name;
   document.getElementById("singup_nav").innerText = "Log out";
 }
-document.getElementById("username").addEventListener("click", ()=>{
-    window.location.href = "/userpanel.html"
-})
+
 document.getElementById("singup_nav").addEventListener("click", ()=>{
   localStorage.removeItem("loggedUser")
   localStorage.removeItem("isAuth")
