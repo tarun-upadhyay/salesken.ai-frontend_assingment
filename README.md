@@ -47,4 +47,7 @@ This is a frontend-based web application, and as this was a codding assignment w
 ![Homepage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/Homepage.png)
 ![loginpage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/Login%20Page.png)
 ![signuppage](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/signup.png)
+![quiz](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/Quizz.png)
+![result_1](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/result_1.png)
+![result_2](https://raw.githubusercontent.com/tarun-upadhyay/salesken.ai-frontend_assingment/main/assests/result_2.png)
 
