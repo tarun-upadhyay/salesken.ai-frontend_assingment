@@ -37,4 +37,11 @@ This is a frontend-based web application, and as this was a codding assignment w
         * Clear => Can clear option whatever have been clicked
         * Subimt and Next => Can Submit the question and jump to the next question
         * Skip => Can Skip that question
+   * All completing all Question you will again land to user panel then you will see button called result.
+   * On Result Page if user marked correct option then see green box where inside this question and their answer
+   * If user marked wrong answer then see red box and see there correct answer.
+   * On top left and top right user can see Scored marks out of total marks.
+
+## Thankyou for your Patience
+ ### Glimpes
 
