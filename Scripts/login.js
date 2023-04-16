@@ -6,6 +6,8 @@ document.getElementById("form_data").addEventListener("submit", (e) => {
   e.preventDefault();
   handleSubmit();
 });
+let isAuth = JSON.parse(localStorage.getItem("isAuth")) || false;
+if(isAuth) window.location.href = "../index.html"
 
 function handleSubmit() {
   const email = document.getElementById("email").value;

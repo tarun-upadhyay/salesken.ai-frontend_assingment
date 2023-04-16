@@ -15,6 +15,7 @@ document.getElementById("username").addEventListener("click", ()=>{
 document.getElementById("singup_nav").addEventListener("click", ()=>{
     localStorage.removeItem("loggedUser")
     localStorage.removeItem("isAuth")
+    localStorage.removeItem("result")
     return window.location.href = "../login.html"
 })
 document.getElementById("logo_nav").addEventListener("click",()=>{

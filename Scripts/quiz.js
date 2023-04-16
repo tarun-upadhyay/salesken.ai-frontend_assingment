@@ -15,6 +15,7 @@ document.getElementById("username").addEventListener("click", ()=>{
 document.getElementById("singup_nav").addEventListener("click", ()=>{
     localStorage.removeItem("loggedUser")
     localStorage.removeItem("isAuth")
+    localStorage.removeItem("result")
   return  window.location.href = "../login.html"
 })
 document.getElementById("logo_nav").addEventListener("click",()=>{
@@ -26,7 +27,7 @@ document.getElementById("logo_nav").addEventListener("click",()=>{
 })
 let questNo = 0;
 function Display(data) {
-  console.log(data);
+ 
   let checkd = document.querySelectorAll("input");
   checkd.forEach((ele) => (ele.checked = false));
 
@@ -55,8 +56,8 @@ document.getElementById("submitandnext").addEventListener("click", () => {
     nextQuestion();
   } else {
     alert("Completed the test");
-    
-   nextQuestion()
+  
+   
     window.location.href = "../userpanel.html";
   }
 });

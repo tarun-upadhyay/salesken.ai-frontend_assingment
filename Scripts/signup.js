@@ -2,18 +2,22 @@ import nav from "./navbar.js";
 document.getElementById("navbar").innerHTML = nav();
 import { ssc ,prog} from "./mocks.js";
 
-const userData = JSON.parse(localStorage.getItem("loggedUser")) || [];
+const userData = JSON.parse(localStorage.getItem("userData")) || [];
 const isAuth = localStorage.getItem("isAuth") || false;
+
 let { name } = userData[0] || ""
 if (isAuth) {
   document.getElementById("login").innerHTML = `<h3 id="username"></h3>`;
   document.getElementById("username").innerText = name;
   document.getElementById("singup_nav").innerText = "Log out";
+ 
+   window.location.href = "../index.html"
 }
 
 document.getElementById("singup_nav").addEventListener("click", ()=>{
   localStorage.removeItem("loggedUser")
   localStorage.removeItem("isAuth")
+  localStorage.removeItem("result")
  return   window.location.href = "../login.html"
 })
 document.getElementById("logo_nav").addEventListener("click",()=>{
